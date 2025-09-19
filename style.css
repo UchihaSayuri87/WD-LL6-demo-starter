@@ -256,3 +256,88 @@ textarea.form-control {
   background-color: #f9f9f9;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+/* RTL Support */
+/* When the .rtl class is on the body, adjust layout for right-to-left languages */
+body.rtl {
+  direction: rtl; /* Set text and layout direction to right-to-left */
+}
+
+/* Navbar RTL: Swap brand and nav links */
+body.rtl .navbar .container {
+  flex-direction: row-reverse !important; /* Reverse the row direction */
+}
+body.rtl .navbar-brand {
+  margin-left: 0;
+  margin-right: 20px; /* Move brand to the right */
+}
+body.rtl .navbar-nav {
+  margin-left: 0 !important;
+  margin-right: auto !important; /* Move nav links to the left */
+}
+body.rtl .navbar-nav .nav-link {
+  text-align: right;
+}
+
+/* Testimonials RTL: Flip paddings, borders, and image positions */
+body.rtl .testimonial-1 {
+  border-left: none;
+  border-right: 1px solid #eee;
+  padding-left: 0;
+  padding-right: 20px;
+}
+body.rtl .testimonial-3 {
+  border-right: none;
+  border-left: 1px solid #eee;
+  padding-right: 0;
+  padding-left: 20px;
+}
+body.rtl .testimonial-number {
+  text-align: right;
+  border-radius: 0 0 0 5px;
+}
+body.rtl .testimonial-image {
+  /* No change needed for image itself, but keep for clarity */
+}
+body.rtl .testimonial-content {
+  text-align: right;
+}
+body.rtl .testimonial-author,
+body.rtl .testimonial-location {
+  text-align: right;
+}
+
+/* Contact Form RTL: Align text and inputs to the right */
+body.rtl .contact-form {
+  text-align: right;
+}
+body.rtl .form-control,
+body.rtl .form-select,
+body.rtl textarea.form-control {
+  text-align: right;
+}
+body.rtl .form-check {
+  padding-right: 0;
+  padding-left: 0;
+  text-align: right;
+}
+body.rtl .form-check-input {
+  float: right;
+  margin-left: 8px;
+  margin-right: 0;
+}
+body.rtl .radio-text {
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+/* Google Translate Widget RTL: Align to left for RTL */
+body.rtl .google-translate-container {
+  right: auto;
+  left: 20px;
+}
+
+/* Footer RTL: Align text to the right */
+body.rtl .footer {
+  text-align: right;
+}

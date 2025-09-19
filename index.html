@@ -191,6 +191,33 @@
   </script>
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- RTL Language Detection Script -->
+  <script>
+    // List of RTL language codes
+    const rtlLangs = ['ar', 'he', 'fa', 'ur'];
+    // Function to check if the current language is RTL
+    function isRTL(lang) {
+      return rtlLangs.some(code => lang.startsWith(code));
+    }
+    // Observe changes to the HTML lang attribute (for Google Translate)
+    const htmlTag = document.documentElement;
+    function updateRTL() {
+      const lang = htmlTag.getAttribute('lang') || 'en';
+      if (isRTL(lang)) {
+        document.body.classList.add('rtl');
+        document.body.setAttribute('dir', 'rtl');
+      } else {
+        document.body.classList.remove('rtl');
+        document.body.removeAttribute('dir');
+      }
+    }
+    // Initial check
+    updateRTL();
+    // Observe for language changes (Google Translate updates lang attribute)
+    const observer = new MutationObserver(updateRTL);
+    observer.observe(htmlTag, { attributes: true, attributeFilter: ['lang'] });
+  </script>
 </body>
 
 </html>
